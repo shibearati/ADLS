@@ -1,0 +1,21 @@
+name: Deploy Config to ADLS
+
+on:
+  push:
+    branches:
+      - main  # Adjust this according to your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # You can change the OS if necessary
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Upload files to Azure Blob Storage
+      uses: azure/CLI@v1
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az storage blob upload-batch --source $GITHUB_WORKSPACE/${{ github.event.client_payload.repoFolderPath }}/ --destination ${{ github.event.client_payload.containerName }} --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --sas-token ${{ secrets.STORAGE_ACCOUNT_SAS_TOKEN }}
