@@ -13,6 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Echo REPO_FOLDER_PATH
+      run: echo "REPO_FOLDER_PATH: ${{ secrets.REPO_FOLDER_PATH }}"
+
     - name: Upload files to Azure Blob Storage
       uses: azure/CLI@v1
       with:
