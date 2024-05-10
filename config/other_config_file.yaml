@@ -9,4 +9,4 @@ services:
     timeout: 30
   - name: service2
     endpoint: https://service2.example.com/api
-    timeout: 60
+    timeout: 10
