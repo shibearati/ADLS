@@ -21,5 +21,5 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az storage blob upload-batch --source $GITHUB_WORKSPACE/${{ secrets.REPO_FOLDER_PATH }}/ --destination ${{ secrets.CONTAINER_NAME }} --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --sas-token ${{ secrets.STORAGE_ACCOUNT_SAS_TOKEN }}
-            az storage container create --name <new45> --account-name <storage44> --account-key ${{ secrets.AZURE_STORAGE_KEY }}
+           
+            az storage blob upload-batch --source $GITHUB_WORKSPACE/${{ secrets.REPO_FOLDER_PATH }}/ --destination ${{ secrets.CONTAINER_NAME }} --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.AZURE_STORAGE_KEY }}
