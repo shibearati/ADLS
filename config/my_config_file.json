@@ -3,7 +3,7 @@
       "host": "example.database.azure.com",
       "port": 1433,
       "username": "admin",
-      "password": "password123",
+      "password": "passwo23",
       "database_name": "example_db"
     },
     "api": {
